@@ -18,6 +18,9 @@ const App = () => {
     section{
       min-height: auto;
     }
+    .llAttw .fcBCjT {
+      min-height: 0;
+    }
     .fdCotd {
       -webkit-animation: none;
       background-color: #20202b;
