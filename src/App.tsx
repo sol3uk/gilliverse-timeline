@@ -18,10 +18,10 @@ const App = () => {
     section{
       min-height: auto;
     }
-    .llAttw, .fcBCjT {
+    .vertical-item-row, .card-content-wrapper, .timeline-card-content {
       min-height: 0;
     }
-    .fdCotd {
+    .timeline-outlinestyles__OutlineWrapper-sc-djcwo8-0 {
       -webkit-animation: none;
       background-color: #20202b;
       border-radius: 10px;
@@ -44,7 +44,7 @@ const App = () => {
         background: #555; 
       }
     }
-    .goHThC {
+    .timeline-main-wrapper {
       padding: 0;
     }
   `
