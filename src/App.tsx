@@ -18,7 +18,7 @@ const App = () => {
     section{
       min-height: auto;
     }
-    .llAttw .fcBCjT {
+    .llAttw, .fcBCjT {
       min-height: 0;
     }
     .fdCotd {
