@@ -1,9 +1,9 @@
 import { Chrono } from 'react-chrono';
-import { TimelineItemModel } from 'react-chrono/dist/models/TimelineItemModel';
 import styled from 'styled-components';
 import './App.css';
 import { ReactComponent as BCSLogo } from './assets/bcs.svg';
 import { ReactComponent as BrBaLogo } from './assets/brba.svg';
+import { TimelineItems } from './TimelineItems';
 
 const App = () => {
   const TimelineWrapper = styled.div`
@@ -55,33 +55,6 @@ const App = () => {
       flex-direction: column;
     }
   `
-  const items: TimelineItemModel[] = [
-    {
-      title: "Mid 60s",
-      cardTitle: "Season 3 Episode 10: Lantern",
-      cardSubtitle: "Better Call Saul",
-      cardDetailedText: "Opening, Chuck reads to Jimmy from the Mabel book.",
-    },
-    {
-      title: "1973",
-      cardTitle: "S2E7 Inflatable",
-      cardSubtitle: "Better Call Saul",
-      cardDetailedText: "Jimmy sees his father get taken advantage of by a grifter.",
-    },
-    {
-      title: "Late 70s",
-      cardTitle: "S4E4 Talk",
-      cardSubtitle: "Better Call Saul",
-      cardDetailedText: "Mike builds a playground for Matty (stop once it jumps into the flashforward).",
-    },
-    {
-      title: "Early 80s",
-      cardTitle: "S1E3 …And the Bag's in the River",
-      cardSubtitle: "Breaking Bad",
-      cardDetailedText: "Walt and Gretchen talk about the composition of the human body in grad school.",
-    },
-  ];
-
   return (
     <TimelineWrapper>
       <LogoWrapper>
@@ -90,7 +63,7 @@ const App = () => {
       </LogoWrapper>
 
       <Chrono
-        items={items}
+        items={TimelineItems}
         mode="VERTICAL_ALTERNATING"
         enableOutline
         theme={{
