@@ -1,4 +1,5 @@
 import { Chrono } from 'react-chrono';
+import { isMobile } from 'react-device-detect';
 import styled from 'styled-components';
 import './App.css';
 import { ReactComponent as BCSLogo } from './assets/bcs.svg';
@@ -12,7 +13,7 @@ const App = () => {
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-rows: 20% 80%;
+    ${isMobile ? 'grid-template-rows: 20% 80%;' : ''}
     align-content: center;
     justify-items: center;
     section{
@@ -20,6 +21,9 @@ const App = () => {
     }
     .vertical-item-row, .card-content-wrapper, .timeline-card-content {
       min-height: 0;
+    }
+    .timeline-card-content.rc-card {
+      width: 100%;
     }
     .timeline-outlinestyles__OutlineWrapper-sc-djcwo8-0 {
       -webkit-animation: none;
@@ -67,7 +71,8 @@ const App = () => {
 
       <Chrono
         items={TimelineItems}
-        mode="VERTICAL_ALTERNATING"
+        mode={isMobile ? "VERTICAL" : "HORIZONTAL"}
+        showAllCardsHorizontal
         enableOutline
         theme={{
           primary: '#006d31',
