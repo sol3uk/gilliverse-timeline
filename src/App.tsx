@@ -1,7 +1,6 @@
 import { Chrono } from 'react-chrono';
 import { isMobile } from 'react-device-detect';
 import styled from 'styled-components';
-import './App.css';
 import { ReactComponent as BCSLogo } from './assets/bcs.svg';
 import { ReactComponent as BrBaLogo } from './assets/brba.svg';
 import { TimelineItems } from './TimelineItems';
