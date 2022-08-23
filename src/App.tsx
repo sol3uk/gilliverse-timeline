@@ -48,9 +48,6 @@ const App = () => {
         background: #555; 
       }
     }
-    .timeline-main-wrapper {
-      padding: 0;
-    }
   `
   const LogoWrapper = styled.div`
     display: flex;
@@ -75,6 +72,7 @@ const App = () => {
         mode={isMobile ? "VERTICAL" : "HORIZONTAL"}
         showAllCardsHorizontal
         enableOutline
+        itemWidth={100}
         theme={{
           primary: '#006d31',
           secondary: '#c1141c',
