@@ -71,6 +71,7 @@ const App = () => {
 
       <Chrono
         items={TimelineItems}
+        useReadMore={false}
         mode={isMobile ? "VERTICAL" : "HORIZONTAL"}
         showAllCardsHorizontal
         enableOutline
