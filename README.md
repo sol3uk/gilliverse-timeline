@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# The Gilliverse Timeline
 
 A small project to help visualise the timeline of Better Call Saul, Breaking Bad, El Camino and any other vince gilligan created works that exist in the shared universe.
 
