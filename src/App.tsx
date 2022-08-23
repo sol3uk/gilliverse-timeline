@@ -11,15 +11,17 @@ const App = () => {
     color: white;
     width: 100%;
     height: 100vh;
-    display: grid;
-    ${isMobile ? 'grid-template-rows: 20% 80%;' : 'grid-gap: 50px;'}
+    display: flex;
+    flex-direction: column;
+    ${isMobile ? 'grid-template-rows: 20% 80%;' : ''}
     align-content: center;
     justify-items: center;
-    section{
+    align-items: center;
+    section {
       min-height: auto;
     }
-    .vertical-item-row, .card-content-wrapper, .timeline-card-content {
-      min-height: 0;
+    .timeline-horz-card-wrapper.horizontal {
+      border-radius: 4px;
     }
     .timeline-card-content.rc-card {
       width: 100%;
@@ -47,17 +49,26 @@ const App = () => {
         background: #555; 
       }
     }
+    .timeline-main-wrapper {
+      background-color: #20202b;
+    }
+    .timelinestyle__Wrapper-sc-cif21b-0, .vertical {
+      background-color: #15151c;
+    }
   `
+
   const LogoWrapper = styled.div`
     display: flex;
     justify-items: center;
     flex-direction: row;
     align-items: center;
     max-width: 55vw;
+    height: 50vh;
     @media (max-width: 900px) { 
       flex-direction: column;
     }
   `
+
   return (
     <TimelineWrapper>
       <LogoWrapper>
@@ -71,10 +82,11 @@ const App = () => {
         mode={isMobile ? "VERTICAL" : "HORIZONTAL"}
         showAllCardsHorizontal
         enableOutline
+        cardPositionHorizontal="BOTTOM"
         theme={{
           primary: '#006d31',
           secondary: '#c1141c',
-          cardBgColor: 'gray',
+          cardBgColor: '#20202b',
           cardForeColor: 'white',
           titleColor: 'white',
           titleColorActive: '#fef901',
