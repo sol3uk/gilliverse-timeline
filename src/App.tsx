@@ -12,7 +12,7 @@ const App = () => {
     width: 100%;
     height: 100vh;
     display: grid;
-    ${isMobile ? 'grid-template-rows: 20% 80%;' : ''}
+    ${isMobile ? 'grid-template-rows: 20% 80%;' : 'grid-gap: 50px;'}
     align-content: center;
     justify-items: center;
     section{
@@ -71,7 +71,6 @@ const App = () => {
         mode={isMobile ? "VERTICAL" : "HORIZONTAL"}
         showAllCardsHorizontal
         enableOutline
-        itemWidth={100}
         theme={{
           primary: '#006d31',
           secondary: '#c1141c',
