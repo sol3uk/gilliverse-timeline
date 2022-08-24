@@ -3,7 +3,7 @@ import { isMobile } from 'react-device-detect';
 import styled from 'styled-components';
 import { ReactComponent as BCSLogo } from './assets/bcs.svg';
 import { ReactComponent as BrBaLogo } from './assets/brba.svg';
-import { TimelineItems } from './TimelineItems';
+import { TimelineDetailItems, TimelineItems } from './TimelineItems';
 
 const App = () => {
   const TimelineWrapper = styled.div`
@@ -78,6 +78,7 @@ const App = () => {
 
       <Chrono
         items={TimelineItems}
+        scrollable={true}
         useReadMore={false}
         mode={isMobile ? "VERTICAL" : "HORIZONTAL"}
         showAllCardsHorizontal
@@ -90,7 +91,37 @@ const App = () => {
           cardForeColor: 'white',
           titleColor: 'white',
           titleColorActive: '#fef901',
-        }} />
+        }}>
+        {TimelineDetailItems.map((item) => {
+          return <>
+            {item.map(({ cardTitle, cardSubtitle, cardDetailedText }) => (
+              <div>
+                <section>
+                  <header>
+                    <p>
+                      {/* href here for wiki */}
+                      {cardTitle}
+                    </p>
+
+                    <p>
+                      {cardSubtitle}
+                    </p>
+                  </header>
+
+                  <div>
+                    <p>
+                      {cardDetailedText}
+                    </p>
+                  </div>
+                </section>
+              </div>
+            ))}
+
+          </>
+
+        }
+        )}
+      </Chrono>
     </TimelineWrapper>
 
   );
