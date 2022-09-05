@@ -3,7 +3,9 @@ import { isMobile } from 'react-device-detect';
 import styled from 'styled-components';
 import { ReactComponent as BCSLogo } from './assets/bcs.svg';
 import { ReactComponent as BrBaLogo } from './assets/brba.svg';
+import { TimelineCardItem } from './components/GroupedTimelineItem/Index';
 import { TimelineDetailItems, TimelineItems } from './TimelineItems';
+
 
 const App = () => {
   const TimelineWrapper = styled.div`
@@ -25,6 +27,26 @@ const App = () => {
     }
     .timeline-card-content.rc-card {
       width: 100%;
+    }
+    .timelinestyle__TimelineContentRender-sc-cif21b-5 {
+      overflow: auto;
+      max-height: 50vh;
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
     }
     .timeline-outlinestyles__OutlineWrapper-sc-djcwo8-0 {
       -webkit-animation: none;
@@ -95,26 +117,11 @@ const App = () => {
         {TimelineDetailItems.map((item) => {
           return <>
             {item.map(({ cardTitle, cardSubtitle, cardDetailedText }) => (
-              <div>
-                <section>
-                  <header>
-                    <p>
-                      {/* href here for wiki */}
-                      {cardTitle}
-                    </p>
-
-                    <p>
-                      {cardSubtitle}
-                    </p>
-                  </header>
-
-                  <div>
-                    <p>
-                      {cardDetailedText}
-                    </p>
-                  </div>
-                </section>
-              </div>
+              <TimelineCardItem
+                cardTitle={cardTitle}
+                cardSubtitle={cardSubtitle}
+                cardDetailedText={cardDetailedText}
+              />
             ))}
 
           </>
