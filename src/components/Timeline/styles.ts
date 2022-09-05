@@ -5,7 +5,7 @@ export const TimelineWrapper = styled.div`
     background-color: #20202b;
     color: white;
     width: 100%;
-    height: 100vh;
+    height: 98vh;
     display: flex;
     flex-direction: column;
     ${isMobile ? 'grid-template-rows: 20% 80%;' : ''}
@@ -23,14 +23,15 @@ export const TimelineWrapper = styled.div`
     }
     .timelinestyle__TimelineContentRender-sc-cif21b-5 {
       overflow: auto;
-      max-height: 50vh;
+      width: 100%;
+      max-height: 66vh;
       ::-webkit-scrollbar {
         width: 10px;
         height: 10px;
         border-radius: 10px;
       }
       ::-webkit-scrollbar-track {
-        background: #f1f1f1; 
+        background: #00000000; 
         border-radius: 10px;
       }
       ::-webkit-scrollbar-thumb {
@@ -43,7 +44,7 @@ export const TimelineWrapper = styled.div`
     }
     .timeline-outlinestyles__OutlineWrapper-sc-djcwo8-0 {
       -webkit-animation: none;
-      background-color: #20202b;
+      background-color: #00000000;
       border-radius: 10px;
       button {
         background: transparent;
@@ -53,7 +54,7 @@ export const TimelineWrapper = styled.div`
         border-radius: 10px;
       }
       ::-webkit-scrollbar-track {
-        background: #f1f1f1; 
+        background: #20202b; 
         border-radius: 10px;
       }
       ::-webkit-scrollbar-thumb {
