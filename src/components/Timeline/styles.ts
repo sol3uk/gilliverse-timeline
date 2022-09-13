@@ -66,6 +66,7 @@ export const TimelineWrapper = styled.div`
       }
     }
     .timeline-main-wrapper {
+      min-height: 7rem;
       background-color: #20202b;
     }
     .timelinestyle__Wrapper-sc-cif21b-0, .vertical {
