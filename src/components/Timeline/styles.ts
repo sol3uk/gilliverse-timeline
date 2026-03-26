@@ -3,7 +3,7 @@ import styled from "styled-components";
 const MOBILE_BREAKPOINT = 768;
 
 export const TimelineWrapper = styled.div`
-    background-color: #20202b;
+    background-color: #15151c;
     color: white;
     width: 100%;
     height: 98vh;
@@ -77,29 +77,40 @@ export const TimelineWrapper = styled.div`
         background: #555;
       }
     }
+    /* In desktop/horizontal mode, the main timeline bar area uses the card background
+       colour so cards blend seamlessly into the track */
     .timeline-main-wrapper {
       min-height: 7rem;
       background-color: #20202b;
     }
-    /* Vertical timeline wrapper and card backgrounds */
+    /* Outer Chrono wrapper and vertical timeline container: dark page-level background */
     [class*="sc-cif21b-0"],
     [class*="sc-1427v1d-0"] {
       background-color: #15151c;
     }
-    /* Fix see-through cards in mobile vertical mode
-       sc-1427v1d-1 = VerticalItemWrapper, sc-1427v1d-3 = TimelineCardContentWrapper
-       sc-d7qjm1-0 = TimelineItemContentWrapper (the rc-card element)
-       Use !important to override any react-chrono theme values that might bleed through */
+    /* Fix mobile vertical mode: override the TimelineMainWrapper back to the dark
+       page colour so the #20202b card rows visibly stand out from it.
+       sc-cif21b-1 = TimelineMainWrapper
+       sc-1427v1d-1 = VerticalItemWrapper  (full-width row per date group)
+       sc-1427v1d-3 = TimelineCardContentWrapper
+       sc-d7qjm1-0  = TimelineItemContentWrapper (the rc-card element) */
+    @media (max-width: ${MOBILE_BREAKPOINT}px) {
+      [class*="sc-cif21b-1"] {
+        background-color: #15151c !important;
+      }
+    }
     [class*="sc-1427v1d-1"],
     [class*="sc-1427v1d-3"],
     [class*="sc-d7qjm1-0"] {
       background-color: #20202b !important;
     }
-    /* Ensure card border is visible between cards in vertical mode */
+    /* Give each card row a visible border and shadow so it stands out from the dark
+       #15151c timeline track area */
     [class*="sc-1427v1d-1"] {
+      border: 1px solid #2e2e3e;
       border-radius: 6px;
       margin-bottom: 0.5rem;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
     /* Fix date/time labels cut off in mobile vertical mode
        sc-1427v1d-5 = TimelineTitleWrapper */
