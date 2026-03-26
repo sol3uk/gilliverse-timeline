@@ -3,6 +3,7 @@ import { Chrono } from "react-chrono";
 import { TimelineDateGroups, TimelineDetailItems } from "../../TimelineItems";
 import { ShowGroupHeaderItem, TimelineCardItem } from "../GroupedTimelineItem/Index";
 import { Header } from "../Header";
+import { SearchBar } from "../SearchBar";
 import { TimelineWrapper } from "./styles";
 
 const MOBILE_BREAKPOINT = 768;
@@ -23,41 +24,60 @@ const useIsMobile = () => {
 export const Timeline = () => {
     const isMobile = useIsMobile();
     const wrapperRef = useRef<HTMLDivElement>(null);
+    const [activeItemIndex, setActiveItemIndex] = useState<number | undefined>(undefined);
 
     useEffect(() => {
         const root = wrapperRef.current;
         if (!root) return;
 
-        const getOutlineButton = () =>
-            root.querySelector<HTMLElement>('[class*="OutlineButton"]');
-        const getOutlineWrapper = () =>
-            root.querySelector<HTMLElement>('[class*="OutlineWrapper"]');
+        const getOutlineButton = (): HTMLElement | null =>
+            root.querySelector('[class*="OutlineButton"]');
+        const getOutlineWrapper = (): HTMLElement | null =>
+            root.querySelector('[class*="OutlineWrapper"]');
 
-        const isOpen = () => {
+        // Use the `open` attribute set by react-chrono for reliable open detection
+        const isPanelOpen = (): boolean => {
             const w = getOutlineWrapper();
-            return !!w && window.getComputedStyle(w).width !== '30px';
+            return !!w && w.hasAttribute('open');
         };
 
-        const closePanel = () => {
-            if (isOpen()) getOutlineButton()?.click();
+        // Close the panel by clicking the button.
+        // We dispatch a non-trusted synthetic click (isTrusted=false) so our own
+        // listener can ignore it, while react-chrono still receives it.
+        const closePanel = (): void => {
+            if (isPanelOpen()) {
+                getOutlineButton()?.click();
+            }
         };
 
-        const handleClick = (e: MouseEvent) => {
+        const handleClick = (e: MouseEvent): void => {
+            // Ignore synthetic clicks we dispatch via closePanel()
+            if (!e.isTrusted) return;
+
+            if (!isPanelOpen()) return;
+
             const outlineWrapper = getOutlineWrapper();
-            if (!outlineWrapper || !isOpen()) return;
+            const outlineButton = getOutlineButton();
+            if (!outlineWrapper) return;
 
             const target = e.target as Node;
+
+            // The X button is inside the wrapper; let react-chrono handle it
+            if (outlineButton && outlineButton.contains(target)) return;
+
             if (!outlineWrapper.contains(target)) {
-                // Clicked outside the panel – close it
+                // Clicked anywhere outside the panel – close it
                 closePanel();
             } else if ((target as HTMLElement).closest?.('[class*="ListItem"]')) {
-                // Clicked a list entry inside the panel – close after navigation
+                // Clicked a nav list entry – close after react-chrono navigates
                 setTimeout(closePanel, 0);
             }
         };
 
-        document.addEventListener('click', handleClick);
-        return () => document.removeEventListener('click', handleClick);
+        // Use capture phase so we receive events that react-chrono may stop
+        // from bubbling in the main timeline area
+        document.addEventListener('click', handleClick, true);
+        return () => document.removeEventListener('click', handleClick, true);
     }, []);
 
     const TimelineCards = TimelineDetailItems.map((dateGroup, groupIdx) => {
@@ -98,8 +118,9 @@ export const Timeline = () => {
     });
     return (<TimelineWrapper ref={wrapperRef}>
         <Header />
+        <SearchBar onNavigate={(idx) => setActiveItemIndex(idx)} />
 
-        <Chrono items={TimelineDateGroups} scrollable={true} useReadMore={false} mode={isMobile ? "VERTICAL" : "HORIZONTAL"} showAllCardsHorizontal enableOutline cardPositionHorizontal="BOTTOM" theme={{
+        <Chrono items={TimelineDateGroups} scrollable={true} useReadMore={false} mode={isMobile ? "VERTICAL" : "HORIZONTAL"} showAllCardsHorizontal enableOutline cardPositionHorizontal="BOTTOM" activeItemIndex={activeItemIndex} theme={{
             primary: '#006d31',
             secondary: '#c1141c',
             cardBgColor: '#20202b',

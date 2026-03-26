@@ -87,10 +87,19 @@ export const TimelineWrapper = styled.div`
       background-color: #15151c;
     }
     /* Fix see-through cards in mobile vertical mode
-       sc-1427v1d-1 = VerticalItemWrapper, sc-1427v1d-3 = TimelineCardContentWrapper */
+       sc-1427v1d-1 = VerticalItemWrapper, sc-1427v1d-3 = TimelineCardContentWrapper
+       sc-d7qjm1-0 = TimelineItemContentWrapper (the rc-card element)
+       Use !important to override any react-chrono theme values that might bleed through */
     [class*="sc-1427v1d-1"],
-    [class*="sc-1427v1d-3"] {
-      background-color: #20202b;
+    [class*="sc-1427v1d-3"],
+    [class*="sc-d7qjm1-0"] {
+      background-color: #20202b !important;
+    }
+    /* Ensure card border is visible between cards in vertical mode */
+    [class*="sc-1427v1d-1"] {
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     }
     /* Fix date/time labels cut off in mobile vertical mode
        sc-1427v1d-5 = TimelineTitleWrapper */
