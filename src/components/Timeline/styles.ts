@@ -21,14 +21,15 @@ export const TimelineWrapper = styled.div`
     .timeline-card-content.rc-card {
       width: 100%;
     }
-    /* Outline/navigation panel - sc-djcwo8-0 is the stable componentId for OutlineWrapper */
-    .sc-djcwo8-0 {
+    /* Outline/navigation panel.
+       styled-components v5 generates compound class names: displayName-componentId
+       (e.g. "timeline-outlinestyles__OutlineWrapper-sc-djcwo8-0"), so we must use
+       attribute substring selectors [class*="sc-djcwo8-N"] to match them. */
+    [class*="sc-djcwo8-0"] {
       background: #20202b;
       border: 1px solid #3a3a4a;
       border-radius: 10px;
-      button {
-        background: transparent;
-      }
+      color: #ddd;
       ::-webkit-scrollbar {
         width: 10px;
         border-radius: 10px;
@@ -45,8 +46,14 @@ export const TimelineWrapper = styled.div`
         background: #555;
       }
     }
-    /* Scrollable card content area */
-    .sc-cif21b-5 {
+    /* OutlineButton (sc-djcwo8-2) – override the hardcoded #fff background */
+    [class*="sc-djcwo8-2"] {
+      background: #2a2a3b;
+      color: white;
+      border: 1px solid #3a3a4a;
+    }
+    /* Scrollable card content area (sc-cif21b-5 = TimelineContentRender) */
+    [class*="sc-cif21b-5"] {
       overflow: auto;
       width: 100%;
       max-height: 66vh;
@@ -72,20 +79,20 @@ export const TimelineWrapper = styled.div`
       background-color: #20202b;
     }
     /* Vertical timeline wrapper and card backgrounds */
-    .sc-cif21b-0,
-    .sc-1427v1d-0 {
+    [class*="sc-cif21b-0"],
+    [class*="sc-1427v1d-0"] {
       background-color: #15151c;
     }
     /* Fix see-through cards in mobile vertical mode
        sc-1427v1d-1 = VerticalItemWrapper, sc-1427v1d-3 = TimelineCardContentWrapper */
-    .sc-1427v1d-1,
-    .sc-1427v1d-3 {
+    [class*="sc-1427v1d-1"],
+    [class*="sc-1427v1d-3"] {
       background-color: #20202b;
     }
     /* Fix date/time labels cut off in mobile vertical mode
        sc-1427v1d-5 = TimelineTitleWrapper */
     @media (max-width: ${MOBILE_BREAKPOINT}px) {
-      .sc-1427v1d-5 {
+      [class*="sc-1427v1d-5"] {
         min-width: 5.5rem;
         overflow: visible;
       }
