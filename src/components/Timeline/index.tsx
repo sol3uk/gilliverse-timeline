@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Chrono } from "react-chrono";
 import { TimelineDateGroups, TimelineDetailItems } from "../../TimelineItems";
 import { ShowGroupHeaderItem, TimelineCardItem } from "../GroupedTimelineItem/Index";
@@ -22,6 +22,44 @@ const useIsMobile = () => {
 
 export const Timeline = () => {
     const isMobile = useIsMobile();
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const root = wrapperRef.current;
+        if (!root) return;
+
+        const getOutlineButton = () =>
+            root.querySelector<HTMLElement>('[class*="OutlineButton"]');
+        const getOutlineWrapper = () =>
+            root.querySelector<HTMLElement>('[class*="OutlineWrapper"]');
+
+        const isOpen = () => {
+            const w = getOutlineWrapper();
+            return !!w && window.getComputedStyle(w).width !== '30px';
+        };
+
+        const closePanel = () => {
+            if (isOpen()) getOutlineButton()?.click();
+        };
+
+        const handleClick = (e: MouseEvent) => {
+            const outlineWrapper = getOutlineWrapper();
+            if (!outlineWrapper || !isOpen()) return;
+
+            const target = e.target as Node;
+            if (!outlineWrapper.contains(target)) {
+                // Clicked outside the panel – close it
+                closePanel();
+            } else if ((target as HTMLElement).closest?.('[class*="ListItem"]')) {
+                // Clicked a list entry inside the panel – close after navigation
+                setTimeout(closePanel, 0);
+            }
+        };
+
+        document.addEventListener('click', handleClick);
+        return () => document.removeEventListener('click', handleClick);
+    }, []);
+
     const TimelineCards = TimelineDetailItems.map((dateGroup, groupIdx) => {
         // Group consecutive items by show title within each date group
         const showGroups: { show: string; items: typeof dateGroup }[] = [];
@@ -58,7 +96,7 @@ export const Timeline = () => {
             </React.Fragment>
         );
     });
-    return (<TimelineWrapper>
+    return (<TimelineWrapper ref={wrapperRef}>
         <Header />
 
         <Chrono items={TimelineDateGroups} scrollable={true} useReadMore={false} mode={isMobile ? "VERTICAL" : "HORIZONTAL"} showAllCardsHorizontal enableOutline cardPositionHorizontal="BOTTOM" theme={{

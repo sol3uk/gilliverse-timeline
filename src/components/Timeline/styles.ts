@@ -46,11 +46,14 @@ export const TimelineWrapper = styled.div`
         background: #555;
       }
     }
-    /* OutlineButton (sc-djcwo8-2) – override the hardcoded #fff background */
+    /* OutlineButton (sc-djcwo8-2) – dark background + sticky so it floats with scroll */
     [class*="sc-djcwo8-2"] {
       background: #2a2a3b;
       color: white;
       border: 1px solid #3a3a4a;
+      position: sticky;
+      top: 0;
+      z-index: 1;
     }
     /* Scrollable card content area (sc-cif21b-5 = TimelineContentRender) */
     [class*="sc-cif21b-5"] {
