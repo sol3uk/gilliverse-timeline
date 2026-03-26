@@ -1,5 +1,6 @@
-import { isMobile } from "react-device-detect";
 import styled from "styled-components";
+
+const MOBILE_BREAKPOINT = 768;
 
 export const TimelineWrapper = styled.div`
     background-color: #20202b;
@@ -8,7 +9,6 @@ export const TimelineWrapper = styled.div`
     height: 98vh;
     display: flex;
     flex-direction: column;
-    ${isMobile ? 'grid-template-rows: 20% 80%;' : ''}
     align-content: center;
     justify-items: center;
     align-items: center;
@@ -21,30 +21,10 @@ export const TimelineWrapper = styled.div`
     .timeline-card-content.rc-card {
       width: 100%;
     }
-    .timelinestyle__TimelineContentRender-sc-cif21b-5 {
-      overflow: auto;
-      width: 100%;
-      max-height: 66vh;
-      ::-webkit-scrollbar {
-        width: 10px;
-        height: 10px;
-        border-radius: 10px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #00000000; 
-        border-radius: 10px;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #888; 
-        border-radius: 10px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #555; 
-      }
-    }
-    .timeline-outlinestyles__OutlineWrapper-sc-djcwo8-0 {
-      -webkit-animation: none;
-      background-color: #00000000;
+    /* Outline/navigation panel - sc-djcwo8-0 is the stable componentId for OutlineWrapper */
+    .sc-djcwo8-0 {
+      background: #20202b;
+      border: 1px solid #3a3a4a;
       border-radius: 10px;
       button {
         background: transparent;
@@ -54,39 +34,67 @@ export const TimelineWrapper = styled.div`
         border-radius: 10px;
       }
       ::-webkit-scrollbar-track {
-        background: #20202b; 
+        background: #20202b;
         border-radius: 10px;
       }
       ::-webkit-scrollbar-thumb {
-        background: #888; 
+        background: #888;
         border-radius: 10px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #555; 
+        background: #555;
+      }
+    }
+    /* Scrollable card content area */
+    .sc-cif21b-5 {
+      overflow: auto;
+      width: 100%;
+      max-height: 66vh;
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #00000000;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
       }
     }
     .timeline-main-wrapper {
       min-height: 7rem;
       background-color: #20202b;
     }
-    .timelinestyle__Wrapper-sc-cif21b-0, .vertical {
+    /* Vertical timeline wrapper and card backgrounds */
+    .sc-cif21b-0,
+    .sc-1427v1d-0 {
       background-color: #15151c;
     }
-    /* Fix see-through popup in mobile vertical mode */
-    .timeline-verticalstyles__TimelineCardContentWrapper-sc-1427v1d-3,
-    .timeline-verticalstyles__VerticalItemWrapper-sc-1427v1d-1 {
+    /* Fix see-through cards in mobile vertical mode
+       sc-1427v1d-1 = VerticalItemWrapper, sc-1427v1d-3 = TimelineCardContentWrapper */
+    .sc-1427v1d-1,
+    .sc-1427v1d-3 {
       background-color: #20202b;
     }
-    /* Fix date/time labels cut off by overflow in mobile vertical mode */
-    .timeline-verticalstyles__TimelineTitleWrapper-sc-1427v1d-5 {
-      min-width: 5.5rem;
-      overflow: visible;
-    }
-    .timeline-item-title {
-      font-size: 0.7rem;
-      white-space: normal;
-      word-break: break-word;
-      text-align: center;
-      overflow-wrap: break-word;
+    /* Fix date/time labels cut off in mobile vertical mode
+       sc-1427v1d-5 = TimelineTitleWrapper */
+    @media (max-width: ${MOBILE_BREAKPOINT}px) {
+      .sc-1427v1d-5 {
+        min-width: 5.5rem;
+        overflow: visible;
+      }
+      .timeline-item-title {
+        font-size: 0.7rem;
+        white-space: normal;
+        word-break: break-word;
+        text-align: center;
+        overflow-wrap: break-word;
+      }
     }
   `;

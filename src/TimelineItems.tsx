@@ -256,16 +256,23 @@ export const OrderedTimelineItems: ITimelineItem[] = [
 ];
 
 
-const formatTimelineItems = (data: ITimelineItem[]) => data.reduce((acc, { groupId, ...rest }) => {
-  acc[groupId.toString()] ??= [];
-  acc[groupId.toString()].push({ ...rest });
-  return acc;
-}, []);
+const formatTimelineItems = (data: ITimelineItem[]): ITimelineItem[][] => {
+  const map: Record<string, ITimelineItem[]> = {};
+  for (const { groupId, ...rest } of data) {
+    const key = groupId.toString();
+    map[key] ??= [];
+    map[key].push({ groupId, ...rest });
+  }
+  return Object.values(map);
+};
 
-const formatTimelineGroups = (data: ITimelineItem[]) => data.reduce((acc, { groupId, title }) => {
-  acc[(groupId-1).toString()] ??= { title: title };
-  return acc;
-}, []);
+const formatTimelineGroups = (data: ITimelineItem[]): { title: string }[] => {
+  const map: Record<string, { title: string }> = {};
+  for (const { groupId, title } of data) {
+    map[groupId.toString()] ??= { title };
+  }
+  return Object.values(map);
+};
 
 export const TimelineDetailItems: ITimelineItem[][] = formatTimelineItems(OrderedTimelineItems);
 export const TimelineDateGroups: { title: string; }[] = formatTimelineGroups(OrderedTimelineItems);
