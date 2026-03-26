@@ -256,9 +256,9 @@ export const OrderedTimelineItems: ITimelineItem[] = [
 ];
 
 
-const formatTimelineItems = (data: ITimelineItem[]) => data.reduce((acc, { id, groupId, title, ...rest }) => {
+const formatTimelineItems = (data: ITimelineItem[]) => data.reduce((acc, { groupId, ...rest }) => {
   acc[groupId.toString()] ??= [];
-  acc[groupId.toString()].push({ title, ...rest });
+  acc[groupId.toString()].push({ ...rest });
   return acc;
 }, []);
 

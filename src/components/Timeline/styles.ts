@@ -72,4 +72,21 @@ export const TimelineWrapper = styled.div`
     .timelinestyle__Wrapper-sc-cif21b-0, .vertical {
       background-color: #15151c;
     }
+    /* Fix see-through popup in mobile vertical mode */
+    .timeline-verticalstyles__TimelineCardContentWrapper-sc-1427v1d-3,
+    .timeline-verticalstyles__VerticalItemWrapper-sc-1427v1d-1 {
+      background-color: #20202b;
+    }
+    /* Fix date/time labels cut off by overflow in mobile vertical mode */
+    .timeline-verticalstyles__TimelineTitleWrapper-sc-1427v1d-5 {
+      min-width: 5.5rem;
+      overflow: visible;
+    }
+    .timeline-item-title {
+      font-size: 0.7rem;
+      white-space: normal;
+      word-break: break-word;
+      text-align: center;
+      overflow-wrap: break-word;
+    }
   `;

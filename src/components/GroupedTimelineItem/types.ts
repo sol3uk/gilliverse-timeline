@@ -1,5 +1,5 @@
 export interface ITimelineCardItem {
   cardTitle: string;
-  cardSubtitle: string;
+  cardSubtitle?: string;
   cardDetailedText: string;
 }

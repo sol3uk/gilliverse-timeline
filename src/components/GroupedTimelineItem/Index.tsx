@@ -1,8 +1,15 @@
-import { CardItem, CardSubtitle, CardText, CardTitle, getShowColour } from "./styles";
+import { CardItem, CardText, CardTitle, ShowGroupHeader, getShowColour } from "./styles";
 import { ITimelineCardItem } from "./types";
 
+export const ShowGroupHeaderItem = ({ show }: { show: string }) => {
+  return (
+    <ShowGroupHeader color={getShowColour(show)}>
+      {show}
+    </ShowGroupHeader>
+  );
+};
 
-export const TimelineCardItem = ({ cardTitle, cardSubtitle, cardDetailedText }: ITimelineCardItem) => {
+export const TimelineCardItem = ({ cardTitle, cardDetailedText }: ITimelineCardItem) => {
 
   return (
     <CardItem>
@@ -14,10 +21,6 @@ export const TimelineCardItem = ({ cardTitle, cardSubtitle, cardDetailedText }: 
             }
             {cardTitle}
           </CardTitle>
-
-          <CardSubtitle color={getShowColour(cardSubtitle)}>
-            {cardSubtitle}
-          </CardSubtitle>
         </header>
 
         <div>
