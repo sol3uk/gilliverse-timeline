@@ -24,7 +24,31 @@ const useIsMobile = () => {
 export const Timeline = () => {
     const isMobile = useIsMobile();
     const wrapperRef = useRef<HTMLDivElement>(null);
-    const [activeItemIndex, setActiveItemIndex] = useState<number | undefined>(undefined);
+    // navRequest drives search navigation. The `seq` counter lets the same
+    // index be re-selected without the effect being skipped.
+    const [navRequest, setNavRequest] = useState<{ idx: number; seq: number } | undefined>(undefined);
+
+    // When a search result is selected, programmatically click the corresponding
+    // timeline node so react-chrono's internal state (and scroll) updates correctly.
+    // (The `activeItemIndex` prop is only used as an initial value by react-chrono
+    // and does not respond to prop changes after mount.)
+    // Vertical (mobile) mode uses data-testid="tree-leaf-click";
+    // Horizontal (desktop) mode uses data-testid="timeline-circle".
+    useEffect(() => {
+        if (navRequest === undefined) return;
+        const root = wrapperRef.current;
+        if (!root) return;
+        const timer = setTimeout(() => {
+            const selector = isMobile ? '[data-testid="tree-leaf-click"]' : '[data-testid="timeline-circle"]';
+            const navButtons = root.querySelectorAll<HTMLElement>(selector);
+            const target = navButtons[navRequest.idx];
+            if (target) {
+                target.click();
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, 0);
+        return () => clearTimeout(timer);
+    }, [navRequest, isMobile]);
 
     useEffect(() => {
         const root = wrapperRef.current;
@@ -118,9 +142,9 @@ export const Timeline = () => {
     });
     return (<TimelineWrapper ref={wrapperRef}>
         <Header />
-        <SearchBar onNavigate={(idx) => setActiveItemIndex(idx)} />
+        <SearchBar onNavigate={(idx) => setNavRequest(prev => ({ idx, seq: (prev?.seq ?? 0) + 1 }))} />
 
-        <Chrono items={TimelineDateGroups} scrollable={true} useReadMore={false} mode={isMobile ? "VERTICAL" : "HORIZONTAL"} showAllCardsHorizontal enableOutline cardPositionHorizontal="BOTTOM" activeItemIndex={activeItemIndex} theme={{
+        <Chrono items={TimelineDateGroups} scrollable={true} useReadMore={false} mode={isMobile ? "VERTICAL" : "HORIZONTAL"} showAllCardsHorizontal enableOutline cardPositionHorizontal="BOTTOM" theme={{
             primary: '#006d31',
             secondary: '#c1141c',
             cardBgColor: '#20202b',

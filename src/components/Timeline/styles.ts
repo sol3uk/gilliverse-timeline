@@ -119,6 +119,15 @@ export const TimelineWrapper = styled.div`
         border-radius: 6px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
       }
+      /* The green connector line (::after on VerticalCircleWrapper) only covers the
+         row height. react-chrono uses no top/bottom on ::after so it gets centred
+         inside the flex container; we pin top: 0 and extend by the row gap so there
+         are no breaks between rows.
+         sc-1427v1d-2 = VerticalCircleWrapper */
+      [class*="sc-1427v1d-2"]::after {
+        top: 0 !important;
+        height: calc(100% + 0.5rem) !important;
+      }
     }
     /* rc-card element: lighter background so cards stand out from the dark page colour */
     [class*="sc-d7qjm1-0"] {
