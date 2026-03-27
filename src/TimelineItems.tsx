@@ -80,7 +80,7 @@ export const OrderedTimelineItems: ITimelineItem[] = [
   { id: 70, groupId: 27, title: "March 2004", cardTitle: "S4E10: Winner", cardSubtitle: "Better Call Saul", cardDetailedText: `Entire Episode (Excluding Opening), only the Jimmy and Kim storyline up until just before Jimmy’s hearing` },
   { id: 71, groupId: 27, title: "March 2004", cardTitle: "S4E9: Wiedersehen", cardSubtitle: "Better Call Saul", cardDetailedText: `Only The Cartel Storyline` },
   { id: 72, groupId: 27, title: "March 2004", cardTitle: "S4E10: Winner", cardSubtitle: "Better Call Saul", cardDetailedText: `Entire Episode (Excluding Opening), only the cartel storyline` },
-  { id: 73, groupId: 27, title: "March 2004", cardTitle: "S4E10: Winner", cardSubtitle: "Better Call Saul", cardDetailedText: `Jimmy'S Hearing` },
+  { id: 73, groupId: 27, title: "March 2004", cardTitle: "S4E10: Winner", cardSubtitle: "Better Call Saul", cardDetailedText: `Jimmy's Hearing` },
   { id: 74, groupId: 28, title: "April 2004", cardTitle: "S5E1: Magic Man", cardSubtitle: "Better Call Saul", cardDetailedText: `Entire Episode (Excluding Opening)` },
   { id: 75, groupId: 28, title: "April 2004", cardTitle: "S6E5: Black and Blue", cardSubtitle: "Better Call Saul", cardDetailedText: `Opening, Werner's men make a plaque for him (I figured this was the most likely time placement)` },
   { id: 76, groupId: 28, title: "April 2004", cardTitle: "S5E2: 50% Off", cardSubtitle: "Better Call Saul", cardDetailedText: `` },
@@ -112,8 +112,8 @@ export const OrderedTimelineItems: ITimelineItem[] = [
   { id: 102, groupId: 31, title: "Sometime between 2004 and 2008", cardTitle: "S6E12: Waterworks", cardSubtitle: "Better Call Saul", cardDetailedText: `Flashback, Jimmy signs the divorce papers for Kim and she meets Jesse outside` },
   { id: 103, groupId: 31, title: "Sometime between 2004 and 2008", cardTitle: "S3E3: Sunk Costs", cardSubtitle: "Better Call Saul", cardDetailedText: `Opening, Mike's shoes hang over the road from his ambush on the Salamanca truck` },
   { id: 104, groupId: 32, title: "February-August 2008", cardTitle: "Minisode 1: Good Cop", cardSubtitle: "Minisode", cardDetailedText: `Good Cop, bad cop` },
-  { id: 105, groupId: 32, title: "February-August 2008", cardTitle: "Minisode 3: Twaughthammer ", cardSubtitle: "Minisode", cardDetailedText: `Twaughthammer (Jesse'S Band)` },
-  { id: 106, groupId: 32, title: "February-August 2008", cardTitle: "Minisode 4: Marie's Confession", cardSubtitle: "Minisode", cardDetailedText: `Marie'S Confession, Marie Makes A Tape For Her Therapist` },
+  { id: 105, groupId: 32, title: "February-August 2008", cardTitle: "Minisode 3: Twaughthammer ", cardSubtitle: "Minisode", cardDetailedText: `Twaughthammer (Jesse's Band)` },
+  { id: 106, groupId: 32, title: "February-August 2008", cardTitle: "Minisode 4: Marie's Confession", cardSubtitle: "Minisode", cardDetailedText: `Marie's Confession, Marie Makes A Tape For Her Therapist` },
   { id: 107, groupId: 33, title: "September 2008", cardTitle: "S1E1: Pilot", cardSubtitle: "Breaking Bad", cardDetailedText: `Entire Episode (Excluding Opening), up until Walt tells Jesse "I am awake` },
   { id: 108, groupId: 33, title: "September 2008", cardTitle: "S3E5: Más", cardSubtitle: "Breaking Bad", cardDetailedText: `Opening, Jesse buys the RV from Combo after spending all of Walt’s money at a strip club` },
   { id: 109, groupId: 33, title: "September 2008", cardTitle: "S1E1: Pilot", cardSubtitle: "Breaking Bad", cardDetailedText: `From "I Am Awake" Until The End Of The Cooking Montage` },
@@ -138,14 +138,14 @@ export const OrderedTimelineItems: ITimelineItem[] = [
   { id: 128, groupId: 35, title: "November 2008", cardTitle: "S2E6: Peekaboo", cardSubtitle: "Breaking Bad", cardDetailedText: `` },
   { id: 129, groupId: 36, title: "December 2008", cardTitle: "S2E7: Negro y Azul", cardSubtitle: "Breaking Bad", cardDetailedText: `Up Until Just Before Hank And The Rest Of The El Paso Agents Do Their Stakeout In The Desert` },
   { id: 130, groupId: 36, title: "December 2008", cardTitle: "S3E3: I.F.T.", cardSubtitle: "Breaking Bad", cardDetailedText: `Opening, Tortuga gets beheaded by the Cousins` },
-  { id: 131, groupId: 36, title: "December 2008", cardTitle: "S2E7: Negro y Azul", cardSubtitle: "Breaking Bad", cardDetailedText: `From Hank'S Stakeout Onward` },
-  { id: 132, groupId: 36, title: "December 2008", cardTitle: "S2E8: Better Call Saul", cardSubtitle: "Breaking Bad", cardDetailedText: `Up Until Walt And Jesse Put The Bag Over Saul’S Head` },
+  { id: 131, groupId: 36, title: "December 2008", cardTitle: "S2E7: Negro y Azul", cardSubtitle: "Breaking Bad", cardDetailedText: `From Hank's Stakeout Onward` },
+  { id: 132, groupId: 36, title: "December 2008", cardTitle: "S2E8: Better Call Saul", cardSubtitle: "Breaking Bad", cardDetailedText: `Up Until Walt And Jesse Put The Bag Over Saul’s Head` },
   { id: 133, groupId: 36, title: "December 2008", cardTitle: "S6E11: Breaking Bad", cardSubtitle: "Better Call Saul", cardDetailedText: `Opening` },
   { id: 134, groupId: 36, title: "December 2008", cardTitle: "S2E8: Better Call Saul", cardSubtitle: "Breaking Bad", cardDetailedText: `Walt And Jesse Threaten Saul Outside The Rv And Come To An Agreement` },
   { id: 135, groupId: 36, title: "December 2008", cardTitle: "S6E11: Breaking Bad", cardSubtitle: "Better Call Saul", cardDetailedText: `Saul Talks With Walt And Jesse In The Rv` },
   { id: 136, groupId: 36, title: "December 2008", cardTitle: "S2E8: Better Call Saul", cardSubtitle: "Breaking Bad", cardDetailedText: `From Badger Describing Fake Heisenberg To The Police, up until just before Saul shows up at Walt’s high school` },
   { id: 137, groupId: 36, title: "December 2008", cardTitle: "S6E11: Breaking Bad", cardSubtitle: "Better Call Saul", cardDetailedText: `Mike Gives Saul Information About Walt And Other Potential Connections` },
-  { id: 138, groupId: 36, title: "December 2008", cardTitle: "S6E11: Breaking Bad", cardSubtitle: "Better Call Saul", cardDetailedText: `Saul Visits Walt’S High School` },
+  { id: 138, groupId: 36, title: "December 2008", cardTitle: "S6E11: Breaking Bad", cardSubtitle: "Better Call Saul", cardDetailedText: `Saul Visits Walt’s High School` },
   { id: 139, groupId: 36, title: "December 2008", cardTitle: "S2E8: Better Call Saul", cardSubtitle: "Breaking Bad", cardDetailedText: `Rest Of Episode` },
   { id: 140, groupId: 36, title: "December 2008", cardTitle: "S2E9: 4 Days Out", cardSubtitle: "Breaking Bad", cardDetailedText: `Up Until The Rv Finally Starts` },
   { id: 141, groupId: 36, title: "December 2008", cardTitle: "El Camino: Flashback", cardSubtitle: "El Camino", cardDetailedText: `Flashback, Walt and Jesse go to a diner after leaving the desert` },
@@ -211,19 +211,19 @@ export const OrderedTimelineItems: ITimelineItem[] = [
   { id: 201, groupId: 47, title: "March 2010", cardTitle: "S5E9: Blood Money", cardSubtitle: "Breaking Bad", cardDetailedText: `Entire Episode (Excluding Opening)` },
   { id: 202, groupId: 47, title: "March 2010", cardTitle: "S5E10: Buried", cardSubtitle: "Breaking Bad", cardDetailedText: `` },
   { id: 203, groupId: 47, title: "March 2010", cardTitle: "S5E11: Confessions", cardSubtitle: "Breaking Bad", cardDetailedText: `` },
-  { id: 204, groupId: 47, title: "March 2010", cardTitle: "S5E12: Rabid Dog", cardSubtitle: "Breaking Bad", cardDetailedText: `From Jesse Showing Up At Walt’S House To Burn It Down, up until Hank drives away with Jesse` },
+  { id: 204, groupId: 47, title: "March 2010", cardTitle: "S5E12: Rabid Dog", cardSubtitle: "Breaking Bad", cardDetailedText: `From Jesse Showing Up At Walt’s House To Burn It Down, up until Hank drives away with Jesse` },
   { id: 205, groupId: 47, title: "March 2010", cardTitle: "S5E12: Rabid Dog", cardSubtitle: "Breaking Bad", cardDetailedText: `Opening And Right After, Walt comes home looking for Jesse and figures out a cover story (up until just before Skyler comes home)` },
-  { id: 206, groupId: 47, title: "March 2010", cardTitle: "S5E12: Rabid Dog", cardSubtitle: "Breaking Bad", cardDetailedText: `Start From Marie'S Therapy Session Up Until Hank Tells Her About Jesse And She’S Fine With It` },
+  { id: 206, groupId: 47, title: "March 2010", cardTitle: "S5E12: Rabid Dog", cardSubtitle: "Breaking Bad", cardDetailedText: `Start From Marie's Therapy Session Up Until Hank Tells Her About Jesse And She’s Fine With It` },
   { id: 207, groupId: 47, title: "March 2010", cardTitle: "S5E12: Rabid Dog", cardSubtitle: "Breaking Bad", cardDetailedText: `Skyler Comes Home And Walt Gives His Story To Her And Jr, moves them into a hotel, talks with Saul, talks with Skyler, and talks with Jr by the hotel pool` },
-  { id: 208, groupId: 47, title: "March 2010", cardTitle: "S5E12: Rabid Dog", cardSubtitle: "Breaking Bad", cardDetailedText: `From When Jesse Wakes Up At Hank’S House And Gives His Confession Onward` },
+  { id: 208, groupId: 47, title: "March 2010", cardTitle: "S5E12: Rabid Dog", cardSubtitle: "Breaking Bad", cardDetailedText: `From When Jesse Wakes Up At Hank’s House And Gives His Confession Onward` },
   { id: 209, groupId: 47, title: "March 2010", cardTitle: "S5E13: To'hajiilee", cardSubtitle: "Breaking Bad", cardDetailedText: `` },
   { id: 210, groupId: 47, title: "March 2010", cardTitle: "S5E14: Ozymandias", cardSubtitle: "Breaking Bad", cardDetailedText: `Entire Episode (Excluding Opening)` },
   { id: 211, groupId: 47, title: "March 2010", cardTitle: "S4E5: Quite a Ride", cardSubtitle: "Better Call Saul", cardDetailedText: `Opening, Saul and Francesca discuss his escape` },
   { id: 212, groupId: 47, title: "March 2010", cardTitle: "S5E15: Granite State", cardSubtitle: "Breaking Bad", cardDetailedText: `Up Until Jesse Starts Picking His Handcuffs, just before the Walt and Saul scene starts` },
   { id: 213, groupId: 47, title: "March 2010", cardTitle: "S6E13: Saul Gone", cardSubtitle: "Better Call Saul", cardDetailedText: `Walt And Saul Flashback` },
-  { id: 214, groupId: 47, title: "March 2010", cardTitle: "S5E15: Granite State", cardSubtitle: "Breaking Bad", cardDetailedText: `From The Start Of Walt And Saul’S Scene In Ed’S Basement Up Until Walt Arrives In New Hampshire And Decides He’Ll Walk To Town ‘Tomorrow’` },
+  { id: 214, groupId: 47, title: "March 2010", cardTitle: "S5E15: Granite State", cardSubtitle: "Breaking Bad", cardDetailedText: `From The Start Of Walt And Saul’s Scene In Ed’s Basement Up Until Walt Arrives In New Hampshire And Decides He’ll Walk To Town ‘Tomorrow’` },
   { id: 215, groupId: 47, title: "March 2010", cardTitle: "S6E1: Wine and Roses", cardSubtitle: "Better Call Saul", cardDetailedText: `Opening, Saul's house is taken apart by the feds` },
-  { id: 216, groupId: 47, title: "March 2010", cardTitle: "S5E15: Granite State", cardSubtitle: "Breaking Bad", cardDetailedText: `From Walt Arriving In New Hampshire Up Until The End Of Andrea'S Murder Scene` },
+  { id: 216, groupId: 47, title: "March 2010", cardTitle: "S5E15: Granite State", cardSubtitle: "Breaking Bad", cardDetailedText: `From Walt Arriving In New Hampshire Up Until The End Of Andrea's Murder Scene` },
   { id: 217, groupId: 48, title: "Sometime between April and September 2010", cardTitle: "El Camino: Neil Flashback", cardSubtitle: "El Camino", cardDetailedText: `` },
   { id: 218, groupId: 48, title: "Sometime between April and September 2010", cardTitle: "El Camino: All Todd Flashbacks", cardSubtitle: "El Camino", cardDetailedText: `` },
   { id: 219, groupId: 48, title: "Sometime between April and September 2010", cardTitle: "S5E15: Granite State", cardSubtitle: "Breaking Bad", cardDetailedText: `From Walt Greeting Ed With The Newspaper Onward` },
@@ -238,16 +238,16 @@ export const OrderedTimelineItems: ITimelineItem[] = [
   { id: 228, groupId: 50, title: "October 2010", cardTitle: "S4E1: Smoke", cardSubtitle: "Better Call Saul", cardDetailedText: `Opening, Gene goes to the hospital and meets Jeff the creepy taxi driver` },
   { id: 229, groupId: 50, title: "October 2010", cardTitle: "S5E1: Magic Man", cardSubtitle: "Better Call Saul", cardDetailedText: `Opening, Gene gets recognized by Jeff and resolves to deal with it` },
   { id: 230, groupId: 50, title: "October 2010", cardTitle: "S6E10: Nippy", cardSubtitle: "Better Call Saul", cardDetailedText: `` },
-  { id: 231, groupId: 51, title: "November 2010", cardTitle: "S6E12: Waterworks", cardSubtitle: "Better Call Saul", cardDetailedText: `From Kim’S First Appearance Up Until Just After Her Lunch Break` },
+  { id: 231, groupId: 51, title: "November 2010", cardTitle: "S6E12: Waterworks", cardSubtitle: "Better Call Saul", cardDetailedText: `From Kim’s First Appearance Up Until Just After Her Lunch Break` },
   { id: 232, groupId: 51, title: "November 2010", cardTitle: "S6E11: Breaking Bad", cardSubtitle: "Better Call Saul", cardDetailedText: `From Francesca Dealing With Her Stoner Tenants Up Until Gene Sits At The Crossroads In His Car` },
-  { id: 233, groupId: 51, title: "November 2010", cardTitle: "S6E12: Waterworks", cardSubtitle: "Better Call Saul", cardDetailedText: `From Just After Kim’S Lunch Break Up Until Her Secretary Pushes Through The Call From Gene And She Stares At The Phone` },
+  { id: 233, groupId: 51, title: "November 2010", cardTitle: "S6E12: Waterworks", cardSubtitle: "Better Call Saul", cardDetailedText: `From Just After Kim’s Lunch Break Up Until Her Secretary Pushes Through The Call From Gene And She Stares At The Phone` },
   { id: 234, groupId: 51, title: "November 2010", cardTitle: "S6E11: Breaking Bad", cardSubtitle: "Better Call Saul", cardDetailedText: `Scene Where Gene Calls Kim And Then Freaks Out And Smashes The Payphone Glass` },
   { id: 235, groupId: 51, title: "November 2010", cardTitle: "S6E12: Waterworks", cardSubtitle: "Better Call Saul", cardDetailedText: `From Kim Answering The Phone Call Up Until The End Of Her Coworkers Singing ‘Happy Birthday` },
-  { id: 236, groupId: 51, title: "November 2010", cardTitle: "S6E11: Breaking Bad", cardSubtitle: "Better Call Saul", cardDetailedText: `From Gene Returning To Jeff’S House After The Phone Call Up Until The End Of His First Scam` },
-  { id: 237, groupId: 52, title: "December 2010", cardTitle: "S6E11: Breaking Bad", cardSubtitle: "Better Call Saul", cardDetailedText: `From Gene’S Scamming Montage Up Until He Meets The Mark With Cancer` },
-  { id: 238, groupId: 52, title: "December 2010", cardTitle: "S6E11: Breaking Bad", cardSubtitle: "Better Call Saul", cardDetailedText: `From Gene Getting A Call From Buddy About The Cancer Mark Up Until The End Of The Episode (Minus The Short Flashback Where Saul Walks Up To Walt’S High School)` },
-  { id: 239, groupId: 52, title: "December 2010", cardTitle: "S6E12: Waterworks", cardSubtitle: "Better Call Saul", cardDetailedText: `From Kim Going Back To Abq Up Until Gene Flees The Cancer Patient’S House` },
-  { id: 240, groupId: 52, title: "December 2010", cardTitle: "S6E12: Waterworks", cardSubtitle: "Better Call Saul", cardDetailedText: `From Gene Going Home After Escaping The Cancer Patient’S House Up To The End Of The Episode` },
+  { id: 236, groupId: 51, title: "November 2010", cardTitle: "S6E11: Breaking Bad", cardSubtitle: "Better Call Saul", cardDetailedText: `From Gene Returning To Jeff’s House After The Phone Call Up Until The End Of His First Scam` },
+  { id: 237, groupId: 52, title: "December 2010", cardTitle: "S6E11: Breaking Bad", cardSubtitle: "Better Call Saul", cardDetailedText: `From Gene’s Scamming Montage Up Until He Meets The Mark With Cancer` },
+  { id: 238, groupId: 52, title: "December 2010", cardTitle: "S6E11: Breaking Bad", cardSubtitle: "Better Call Saul", cardDetailedText: `From Gene Getting A Call From Buddy About The Cancer Mark Up Until The End Of The Episode (Minus The Short Flashback Where Saul Walks Up To Walt’s High School)` },
+  { id: 239, groupId: 52, title: "December 2010", cardTitle: "S6E12: Waterworks", cardSubtitle: "Better Call Saul", cardDetailedText: `From Kim Going Back To Abq Up Until Gene Flees The Cancer Patient’s House` },
+  { id: 240, groupId: 52, title: "December 2010", cardTitle: "S6E12: Waterworks", cardSubtitle: "Better Call Saul", cardDetailedText: `From Gene Going Home After Escaping The Cancer Patient’s House Up To The End Of The Episode` },
   { id: 241, groupId: 52, title: "December 2010", cardTitle: "S6E13: Saul Gone", cardSubtitle: "Better Call Saul", cardDetailedText: `From Just After The Opening Up Until The Start Of The Walt Flashback` },
   { id: 242, groupId: 52, title: "December 2010", cardTitle: "S6E13: Saul Gone", cardSubtitle: "Better Call Saul", cardDetailedText: `From The End Of The Walt Flashback Up Until The Start Of The Chuck Flashback` },
   { id: 243, groupId: 52, title: "December 2010", cardTitle: "S6E13: Saul Gone", cardSubtitle: "Better Call Saul", cardDetailedText: `From The End Of The Chuck Flashback Up Until The End Of The Episode` },
@@ -256,16 +256,23 @@ export const OrderedTimelineItems: ITimelineItem[] = [
 ];
 
 
-const formatTimelineItems = (data: ITimelineItem[]) => data.reduce((acc, { id, groupId, title, ...rest }) => {
-  acc[groupId.toString()] ??= [];
-  acc[groupId.toString()].push({ title, ...rest });
-  return acc;
-}, []);
+const formatTimelineItems = (data: ITimelineItem[]): ITimelineItem[][] => {
+  const map: Record<string, ITimelineItem[]> = {};
+  for (const { groupId, ...rest } of data) {
+    const key = groupId.toString();
+    map[key] ??= [];
+    map[key].push({ groupId, ...rest });
+  }
+  return Object.values(map);
+};
 
-const formatTimelineGroups = (data: ITimelineItem[]) => data.reduce((acc, { groupId, title }) => {
-  acc[(groupId-1).toString()] ??= { title: title };
-  return acc;
-}, []);
+const formatTimelineGroups = (data: ITimelineItem[]): { title: string }[] => {
+  const map: Record<string, { title: string }> = {};
+  for (const { groupId, title } of data) {
+    map[groupId.toString()] ??= { title };
+  }
+  return Object.values(map);
+};
 
 export const TimelineDetailItems: ITimelineItem[][] = formatTimelineItems(OrderedTimelineItems);
 export const TimelineDateGroups: { title: string; }[] = formatTimelineGroups(OrderedTimelineItems);

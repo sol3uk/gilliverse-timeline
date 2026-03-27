@@ -30,6 +30,15 @@ export const CardSubtitle = styled.p`
     
     ${props => props.color}
   `;
+export const ShowGroupHeader = styled.p`
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.4rem 0.5rem 0.2rem;
+    margin: 0.5rem 0 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+
+    ${props => props.color}
+  `;
 export const CardText = styled.p`
     color: white;
     font-size: 0.85rem;

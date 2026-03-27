@@ -1,5 +1,5 @@
-import { ReactComponent as BCSLogo } from '../../assets/bcs.svg';
-import { ReactComponent as BrBaLogo } from '../../assets/brba.svg';
+import BCSLogo from '../../assets/bcs.svg?react';
+import BrBaLogo from '../../assets/brba.svg?react';
 import { LogoWrapper } from './styles';
 
 export const Header = () => {
