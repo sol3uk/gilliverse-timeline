@@ -88,37 +88,24 @@ export const TimelineWrapper = styled.div`
     [class*="sc-1427v1d-0"] {
       background-color: #15151c;
     }
-    /* Fix mobile vertical mode: override the TimelineMainWrapper back to the dark
-       page colour so the #20202b card rows visibly stand out from it.
-       sc-cif21b-1 = TimelineMainWrapper
-       sc-1427v1d-1 = VerticalItemWrapper  (full-width row per date group)
-       sc-1427v1d-3 = TimelineCardContentWrapper
-       sc-d7qjm1-0  = TimelineItemContentWrapper (the rc-card element) */
+    /* Fix mobile vertical mode:
+       sc-cif21b-1 = TimelineMainWrapper → dark page background
+       sc-1427v1d-5 = TimelineTitleWrapper (left date/dot column) → lighter strip only
+       sc-d7qjm1-0  = TimelineItemContentWrapper (rc-card) → lighter card box
+       sc-1427v1d-1 = VerticalItemWrapper (full row) → transparent, provides spacing only
+       sc-1427v1d-3 = TimelineCardContentWrapper → transparent (dark background shows through) */
     @media (max-width: ${MOBILE_BREAKPOINT}px) {
+      /* Dark page background — card strip must stand out from it */
       [class*="sc-cif21b-1"] {
         background-color: #15151c !important;
       }
-    }
-    [class*="sc-1427v1d-1"],
-    [class*="sc-1427v1d-3"],
-    [class*="sc-d7qjm1-0"] {
-      background-color: #20202b !important;
-    }
-    /* Give each card row a visible border and shadow so it stands out from the dark
-       #15151c timeline track area */
-    [class*="sc-1427v1d-1"] {
-      border: 1px solid #2e2e3e;
-      border-radius: 6px;
-      margin-bottom: 0.5rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    }
-    /* Fix date/time labels cut off in mobile vertical mode
-       sc-1427v1d-5 = TimelineTitleWrapper */
-    @media (max-width: ${MOBILE_BREAKPOINT}px) {
+      /* Only the left date/dot/connector column (TimelineTitleWrapper) gets the lighter strip */
       [class*="sc-1427v1d-5"] {
+        background-color: #20202b;
         min-width: 5.5rem;
         overflow: visible;
       }
+      /* Fix date/time labels cut off in mobile vertical mode */
       .timeline-item-title {
         font-size: 0.7rem;
         white-space: normal;
@@ -126,5 +113,19 @@ export const TimelineWrapper = styled.div`
         text-align: center;
         overflow-wrap: break-word;
       }
+      /* Individual card boxes: subtle border so they stand out from the dark background */
+      [class*="sc-d7qjm1-0"] {
+        border: 1px solid #2e2e3e;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      }
+    }
+    /* rc-card element: lighter background so cards stand out from the dark page colour */
+    [class*="sc-d7qjm1-0"] {
+      background-color: #20202b !important;
+    }
+    /* Space vertical rows apart */
+    [class*="sc-1427v1d-1"] {
+      margin-bottom: 0.5rem;
     }
   `;
